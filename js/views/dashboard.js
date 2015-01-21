@@ -13,6 +13,8 @@ define([
     className: 'row',
     template: _.template(dbTemplate),
     events: {
+
+      'click button.nextPage': 'nextPage'
     },
 
     initialize: function() {
@@ -41,6 +43,10 @@ define([
     },
     moveSignup: function() {
       window.location.href = '/account.html#signup';
+    },
+
+    nextPage: function() {
+      this.collection.getNextPage();
     }
   });
 

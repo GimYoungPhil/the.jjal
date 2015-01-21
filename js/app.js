@@ -5,7 +5,8 @@ require.config({
     jquery:     '../libs/jquery-2.1.3/jquery',
     underscore: '../libs/underscore-1.7.0/underscore',
     backbone:   '../libs/backbone-1.1.2/backbone',
-    material:   '../libs/materialize-0.95.0/js/materialize',
+    paginator:  '../libs/backbone.paginator-2.0.0/backbone.paginator',
+    bootstrap:  '../libs/bootstrap-3.3.2/js/bootstrap',
     text:       '../libs/require-2.1.15/text'
   },
 
@@ -17,9 +18,13 @@ require.config({
       deps: ['jquery','underscore'],
       exports: 'Backbone'
     },
-    material: {
+    paginator: {
+      deps: ['underscore','backbone'],
+      exports: 'Paginator'
+    },
+    bootstrap: {
       deps: ['jquery'],
-      exports: 'Material'
+      exports: 'bootstrap'
     }
   }
 
@@ -27,9 +32,9 @@ require.config({
 
 require([
   'backbone',
-  // 'material',
+  'bootstrap',
   'routers/router'
-], function(Backbone, AppRouter){
+], function(Backbone, Bootstrap, AppRouter){
   var router = new AppRouter();
   Backbone.history.start({pushState: false});
 });

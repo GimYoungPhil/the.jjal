@@ -9,23 +9,39 @@ define([
 
   var JjalView = Backbone.View.extend({
     tagName: 'div',
-    className: 'card',
+    className: 'col-xs-12',
     template: _.template(jjTemplate),
     events: {
-      'click .mdi-navigation-more-vert': 'cardReveal',
-      'click .mdi-navigation-close': 'cardReveal'
+      'click .photo_url': 'selectURL'
     },
 
     initialize: function() {
     },
 
     render: function() {
+      this.setDisplayImage();
       this.$el.append( this.template( this.model.toJSON() ) );
       return this;
     },
 
-    cardReveal: function() {
-      this.$('.card-reveal').toggleClass('cardTransY100');
+    // 모델에서 디스플레이 이미지 셋을 선택한다.
+    setDisplayImage: function() {
+      var photos = this.model.get('photos')[0]['alt_sizes'];
+      var displayImage;
+      _.each(photos, function(photo) {
+        if( photo['width'] == '500') {
+          displayImage = photo;
+        }
+      });
+      if(!displayImage) {
+        displayImage = photos[0];
+      }
+
+      this.model.set('displayImage', displayImage);
+    },
+
+    selectURL: function(e) {
+      $(e.target).select()
     }
   });
 

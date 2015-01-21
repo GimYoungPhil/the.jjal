@@ -2,77 +2,57 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The JJAL</title>
-  <!--Import materialize.css-->
-  <link rel="stylesheet" href="libs/materialize-0.95.0/css/materialize.css" />
-
+  <link rel="stylesheet" href="libs/bootstrap-3.3.2/css/bootstrap.css" />
 <style type="text/css">
-@media (min-width: 993px) {
-  header, main, footer {
-    padding-left: 240px;
-  }
+body {
+  padding-top: 70px;
+  background: #36465d;
 }
 
-.page-title {
-  padding-left: 10px;
-  font-size: 24px;
+.thumbnail.card  {
+  padding: 0;
+  border: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
-.nav-info {
-  font-size: 1.7em;
+.thumbnail.card .card-header {
+  padding: 9px;
 }
 
-.card-reveal {
-  transform: translateY(0px);
-  -webkit-transition: 0.2s ease-out;
-     -moz-transition: 0.2s ease-out;
-       -o-transition: 0.2s ease-out;
-      -ms-transition: 0.2s ease-out;
-          transition: 0.2s ease-out;
+.thumbnail.card .card-image img {
+  width: 100%
 }
 
-.cardTransY100 {
-  transform: translateY(-100%);
+.thumbnail.card .card-caption {
+  padding: 9px;
 }
+
 </style>
-
 </head>
 <body>
 
-  <header>
-    <nav class="top-nav teal">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="" class="page-title">The JJAL</a>
-          <ul id="nav-mobile" class="fixed side-nav">
-            <li class="nav-info blue-grey darken-1">
-              <div class="row valign-wrapper">
-                <div class="col s4">
-                  <img src="img/iu.png" alt="" class="circle responsive-img" style="vertical-align: middle;">
-                </div>
-                <div class="col s8">
-                  제작자
-                </div>
-              </div>
-            </li>
-            <li>
-              <a href="components.html">
-                <i class="mdi-editor-insert-chart left"></i>
-                Components
-              </a>
-            </li>
-            <li>
-              <a href="javascript.html">
-                <i class="mdi-action-search left"></i>
-                JavaScript
-              </a>
-            </li>
-          </ul>
-          <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-        </div>
-      </div>
-    </nav>
-  </header>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">The JJAL</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">dashboard</a></li>
+        <li><a href="#">infomation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
   <div class="container main"></div>
 
