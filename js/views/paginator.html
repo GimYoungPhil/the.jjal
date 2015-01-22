@@ -1,0 +1,27 @@
+<nav>
+  <ul class="pagination">
+    <li class="<%= hasPreviousPage ? '' : 'disabled' %>">
+      <a href="first" aria-label="First">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="<%= hasPreviousPage ? '' : 'disabled' %>">
+      <a href="previous" aria-label="Previous">
+        <span aria-hidden="true">&lt;</span>
+      </a>
+    </li>
+    <% _.each(currentPageRange, function(pageNum){ %>
+    <li class="<%= currentPage == pageNum ? 'active' : '' %>"><a href="get" data-page="<%= pageNum %>"><%= pageNum + 1 %></a></li>
+    <% }) %>
+    <li class="<%= hasNextPage ? '' : 'disabled' %>">
+      <a href="next" aria-label="Next">
+        <span aria-hidden="true">&gt;</span>
+      </a>
+    </li>
+    <li class="<%= hasNextPage ? '' : 'disabled' %>">
+      <a href="last" aria-label="Last">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
