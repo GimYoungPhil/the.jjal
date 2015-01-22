@@ -57,7 +57,10 @@ define([
     // },
 
     parseState: function (response) {
-      return { totalRecords: response['total_posts'] };
+      return {
+        totalRecords: response['total_posts'],
+        blogInfo: response['blog']
+      };
     },
 
     parseRecords: function (response) {

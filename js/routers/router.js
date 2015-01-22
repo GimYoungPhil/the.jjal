@@ -11,10 +11,10 @@ define([
   var AppRouter = Backbone.Router.extend({
     mainDom: $('.main'),
     routes: {
-      '': 'redirect',
-      'dashboard': 'showDashboard',
-      'info': 'showInfo',
-      '*error': 'showError'
+      'dashboard' : 'showDashboard',
+      'infomation': 'showInfo',
+      ''          : 'redirect',
+      '*error'    : 'showError'
     },
 
     initialize: function() {
@@ -22,7 +22,7 @@ define([
     },
 
     redirect: function() {
-      this.navigate("/dashboard", {trigger: true});
+      this.navigate('/infomation', {trigger: true});
     },
 
     showDashboard: function() {

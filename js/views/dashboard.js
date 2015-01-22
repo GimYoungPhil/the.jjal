@@ -4,15 +4,17 @@ define([
   'backbone',
   'collections/jjalbang',
   'views/jjal',
+  'text!views/blog.html',
   'text!views/paginator.html',
   'text!views/dashboard.html'
-], function($, _, Backbone, JjalbangCollection, JjalView, pageTemplate, dbTemplate){
+], function($, _, Backbone, JjalbangCollection, JjalView, blogTemplate, pageTemplate, dbTemplate){
   'use strict';
 
   var NavbarView = Backbone.View.extend({
     tagName: 'div',
     className: 'row',
     template: _.template(dbTemplate),
+    blogTemplate: _.template(blogTemplate),
     pageTemplate: _.template(pageTemplate),
     events: {
 
@@ -31,8 +33,9 @@ define([
     },
 
     render: function() {
-      this.$el.append( this.template() );
+      this.$el.html( this.template() );
       this.$listEl = this.$('.jjalbangList');
+      this.$infoEl = this.$('.blogInfo');
       this.$pageEl = this.$('.paginator');
       return this;
     },
@@ -42,6 +45,7 @@ define([
       this.collection.each( function( jjal ) {
         this.renderJJal( jjal );
       }, this );
+      this.renderBlogInfo();
       this.renderPaginator();
     },
 
@@ -50,12 +54,17 @@ define([
       this.$listEl.append(jjal.render().el);
     },
 
+    renderBlogInfo: function() {
+      var blogInfo = this.collection.state.blogInfo;
+      console.log(blogInfo);
+      this.$infoEl.html(this.blogTemplate(blogInfo));
+    },
+
     renderPaginator: function() {
       var state = this.collection.state;
       state.hasPreviousPage = this.collection.hasPreviousPage();
       state.hasNextPage = this.collection.hasNextPage();
       state.currentPageRange = this.collection.getPageRange();
-      console.log(state);
       this.$pageEl.html(this.pageTemplate(state));
     },
 
@@ -82,7 +91,6 @@ define([
     getPage: function(e) {
       e.preventDefault();
       var pageNumber = $(e.target).data('page');
-      // console.log(pageNumber);
       this.collection.getPage(pageNumber,{reset: true});
     }
   });
