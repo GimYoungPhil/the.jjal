@@ -17,8 +17,7 @@ define([
     blogTemplate: _.template(blogTemplate),
     pageTemplate: _.template(pageTemplate),
     events: {
-      'click h2': 'clickH2',
-      'scroll .jjalbangList': 'checkScroll'
+      'click a.addJjal': 'addJjal'
     },
 
     initialize: function() {
@@ -34,6 +33,7 @@ define([
       this.$listEl = this.$('.jjalbangList');
       this.$infoEl = this.$('.blogInfo');
       this.$pageEl = this.$('.paginator');
+      this.$loadEl = this.$('.jjalLoding');
       return this;
     },
 
@@ -43,6 +43,7 @@ define([
         this.renderJJal( jjal );
       }, this );
       this.renderBlogInfo();
+      this.$loadEl.hide();
       // this.renderPaginator();
     },
 
@@ -54,34 +55,13 @@ define([
     renderBlogInfo: function() {
       var blogInfo = this.collection.state.blogInfo;
       this.$infoEl.html(this.blogTemplate(blogInfo));
+      this.$infoEl.addClass('fade in');
     },
 
-    clickH2: function() {
-      console.log('clickH2');
-    },
-
-    checkScroll: function () {
-      console.log('checkScroll');
-      var triggerPoint = 100; // 100px from the bottom
-        if( !this.isLoading && this.el.scrollTop + this.el.clientHeight + triggerPoint > this.el.scrollHeight ) {
-          this.collection.page += 1; // Load next page
-          this.loadResults();
-        }
-    },
-
-    loadResults: function () {
-      var that = this;
-      // we are starting a new load of results so set isLoading to true
-      this.isLoading = true;
-      // fetch is Backbone.js native function for calling and parsing the collection url
-      this.collection.fetch({ 
-        success: function (tweets) {
-          // Once the results are returned lets populate our template
-          $(that.el).append(_.template(TwitterListTemplate, {tweets: tweets.models, _:_}));
-          // Now we have finished loading set isLoading back to false
-          that.isLoading = false;
-        }
-      });      
+    addJjal: function(e) {
+      e.preventDefault();
+      this.$loadEl.show();
+      this.collection.getNextPage();
     },
 
     // renderPaginator: function() {

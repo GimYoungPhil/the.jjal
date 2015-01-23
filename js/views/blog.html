@@ -1,26 +1,22 @@
 <ul class="list-group">
   <li class="list-group-item">
     <span class="badge"><%= url %></span>
-    URL
+    <i class="fa fa-external-link"></i>&nbsp; URL
   </li>
   <li class="list-group-item">
     <span class="badge"><%= posts %></span>
-    포스트
+    <i class="fa fa-file-image-o"></i>&nbsp; 포스트
   </li>
   <li class="list-group-item">
     <span class="badge"><%= followers %></span>
-    팔로워
+    <i class="fa fa-user-times"></i>&nbsp; 팔로워
   </li>
   <li class="list-group-item">
     <span class="badge"><%= likes %></span>
-    좋아요 포스트
-  </li>
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    블로그 팔로잉
+    <i class="fa fa-heart"></i>&nbsp; 좋아요 포스트
   </li>
   <li class="list-group-item">
     <span class="badge"><%= (new Date(updated * 1000)).toLocaleString() %></span>
-    업데이트
+    <i class="fa fa-clock-o"></i>&nbsp; 업데이트
   </li>
 </ul>

@@ -4,13 +4,13 @@
     <a href="<%= post_url %>"><span class="label label-primary"><%= blog_name %></span></a>
   </div>
   <div class="card-image">
-    <img src="<%= displayImage.url %>" alt="..." class="img-responsive">
+    <img src="<%= displayImage.url %>" alt="..." class="img-responsive" style="height:<%= displayImage.height %>;">
   </div>
   <div class="card-caption">
     <h4>
-      반응: <%= note_count %>
+      반응 <%= note_count %> 개
       <a class="pull-right" data-toggle="collapse" href="<%= '#' + id %>" aria-expanded="false" aria-controls="<%= id %>">
-        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <i class="fa fa-cube"></i>
       </a>
     </h4>
     <div class="collapse" id="<%= id %>">

@@ -9,7 +9,7 @@ define([
 
   var JjalView = Backbone.View.extend({
     tagName: 'div',
-    className: 'col-xs-12',
+    className: 'col-xs-',
     template: _.template(jjTemplate),
     events: {
       'click .photo_url': 'selectURL'

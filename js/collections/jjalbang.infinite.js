@@ -7,7 +7,7 @@ define([
   'use strict';
 
   var JjalbangCollection = Backbone.PageableCollection.extend({
-    mode: "infinite",
+    mode: "server",
     model: JjalModel,
     url: '/api/jjalbang/photo',
 
