@@ -2,11 +2,11 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'collections/jjalbang',
+  'collections/jjalbang.server',
   'views/jjal',
   'text!views/blog.html',
   'text!views/paginator.html',
-  'text!views/dashboard.html'
+  'text!views/dashboard.server.html'
 ], function($, _, Backbone, JjalbangCollection, JjalView, blogTemplate, pageTemplate, dbTemplate){
   'use strict';
 
@@ -56,7 +56,6 @@ define([
 
     renderBlogInfo: function() {
       var blogInfo = this.collection.state.blogInfo;
-      console.log(blogInfo);
       this.$infoEl.html(this.blogTemplate(blogInfo));
     },
 

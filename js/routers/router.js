@@ -3,7 +3,7 @@ define([
   'underscore',
   'backbone',
   'views/navbar',
-  'views/dashboard',
+  'views/dashboard.infinite',
   'views/info',
 ], function($, _, Backbone, NavbarView, DashboardView, InfoView) {
   'use strict';
