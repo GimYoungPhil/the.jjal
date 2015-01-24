@@ -38,7 +38,7 @@ define([
     },
 
     renderJJalbang: function() {
-      this.$listEl.empty();
+      // this.$listEl.empty();
       this.collection.each( function( jjal ) {
         this.renderJJal( jjal );
       }, this );
@@ -61,7 +61,7 @@ define([
     addJjal: function(e) {
       e.preventDefault();
       this.$loadEl.show();
-      this.collection.getNextPage();
+      this.collection.getNextPage({reset: true});
     },
 
     // renderPaginator: function() {

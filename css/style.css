@@ -1,0 +1,52 @@
+body {
+  padding-top: 70px;
+}
+
+.navbar {
+  box-shadow: 0 0 0 2px #df691a;
+}
+
+.navbar .navbar-brand {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Helvetica Neue";
+}
+
+.navbar .navbar-brand span{
+  font-size: 18px;
+}
+
+.blogInfo {
+  -webkit-font-smoothing: antialiased;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 1s linear;
+       -o-transition: opacity 1s linear;
+          transition: opacity 1s linear;
+}
+
+.thumbnail.card  {
+  padding: 0;
+  border: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.thumbnail.card .card-header {
+  padding: 9px;
+}
+
+.thumbnail.card .card-header .label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4e5d6c;
+}
+
+.thumbnail.card .card-image img {
+  width: 100%
+}
+
+.thumbnail.card .card-caption {
+  padding: 9px;
+}
