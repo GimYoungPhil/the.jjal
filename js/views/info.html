@@ -1,27 +1,41 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>The JJAL</h1>
-    <p>웹 개발을 위한 고품질 이미지 솔루션.</p>
-    <p><a class="btn btn-primary btn-lg" href="#dashboard" role="button">후방주의!</a></p>
+<div class="col-xs-12">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>The JJAL</h1>
+      <p>웹 개발을 위한 고품질 이미지 솔루션.</p>
+      <p><a class="btn btn-primary btn-lg" href="#dashboard" role="button">후방주의!</a></p>
+    </div>
+  </div>
+
+  <h1>Team</h1>
+  <blockquote>
+    <p>How will you choose images?</p>
+    <footer>Lord of <cite title="Source Title">A Corner, Inc.</cite></footer>
+  </blockquote>
+  <blockquote class="blockquote-reverse">
+    <p>Development 업무에서 명확한 이미지를 찾는 일은 항상 긴 시간과 많은 비용을 소비한다.</p>
+    <footer>TECHNOLOGY GUILD MASTER in <cite title="Source Title">A Corner, Inc.</cite></footer>
+  </blockquote>
+  <blockquote>
+    <p>하이-퀄리티 파일 업로드 시스템에 저급한 이미지 파일을 올리는 꼴은 보기도 싫다.</p>
+    <footer>SERVER SHEPHERD in <cite title="Source Title">A Corner, Inc.</cite></footer>
+  </blockquote>
+  <blockquote class="blockquote-reverse">
+    <p>적절한 이미지를 고르기 위해 모니터 앞에서 항상 고민한다.</p>
+    <footer>FRONTEND WARRIOR in <cite title="Source Title">A Corner, Inc.</cite></footer>
+  </blockquote>
+
+  <h1>Contents</h1>
+  <div class="well col-xs-12">
+    <% _.each(thumbnails, function(thumbnail) { %>
+      <div class="col-xs-6 col-sm-3">
+        <blockquote>
+          <p><%= thumbnail.title %></p>
+        </blockquote>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <img src="<%= thumbnail.url %>" class="img-responsive" alt="Responsive image" style="height:300px;">
+      </div>
+    <% }) %>
   </div>
 </div>
-
-<blockquote>
-  <p>How will you choose images?</p>
-  <footer>Lord of <cite title="Source Title">A Corner, Inc.</cite></footer>
-</blockquote>
-
-<blockquote class="blockquote-reverse">
-  <p>Development 업무에서 명확한 이미지를 찾는 일은 항상 긴 시간과 많은 비용을 소비한다.</p>
-  <footer>TECHNOLOGY GUILD MASTER in <cite title="Source Title">A Corner, Inc.</cite></footer>
-</blockquote>
-
-<blockquote>
-  <p>하이-퀄리티 파일 업로드 시스템에 저급한 이미지 파일을 올리는 꼴은 보기도 싫다.</p>
-  <footer>SERVER SHEPHERD in <cite title="Source Title">A Corner, Inc.</cite></footer>
-</blockquote>
-
-<blockquote class="blockquote-reverse">
-  <p>적절한 이미지를 고르기 위해 모니터 앞에서 항상 고민한다.</p>
-  <footer>FRONTEND WARRIOR in <cite title="Source Title">A Corner, Inc.</cite></footer>
-</blockquote>
