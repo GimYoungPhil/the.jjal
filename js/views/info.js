@@ -53,7 +53,7 @@ define([
           title: '또 못된 손',
           url: 'http://41.media.tumblr.com/b1add116e41a8397cfb6cba448b4fd60/tumblr_ndkoala5Yp1qlf2x3o1_1280.jpg'
         },{
-          title: '도둑',
+          title: '복면',
           url: 'http://36.media.tumblr.com/2a540652c9e765d44c9f8c19f2ae55c6/tumblr_nik12crgkv1rqmuhto1_1280.jpg'
         },{
           title: '흡연',

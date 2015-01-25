@@ -5,7 +5,8 @@ define([
   'views/navbar',
   'views/dashboard.infinite',
   'views/info',
-], function($, _, Backbone, NavbarView, DashboardView, InfoView) {
+  'views/error'
+], function($, _, Backbone, NavbarView, DashboardView, InfoView, ErrorView) {
   'use strict';
 
   var AppRouter = Backbone.Router.extend({
@@ -36,6 +37,8 @@ define([
     },
 
     showError: function() {
+      var erView = new ErrorView();
+      this.changeCurrentView(erView);
     },
 
     changeCurrentView: function(newView) {
